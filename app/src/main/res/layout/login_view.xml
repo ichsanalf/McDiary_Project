@@ -8,23 +8,19 @@
     android:gravity="center"
     tools:context=".LoginActivity">
 
-    <TextView
-        android:id="@+id/tv_sigin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Welcome !"
-        android:textColor="@android:color/black"
-        android:textSize="30sp"
-        android:textAlignment="center"
+    <ImageView
+        android:id="@+id/mcdiary_login"
+        android:layout_width="154dp"
+        android:layout_height="40dp"
         android:layout_marginBottom="20dp"
-        />
+        android:src="@drawable/ic_mcdiary" />
 
     <EditText
         android:id="@+id/tv_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textEmailAddress"
-        android:hint="E-mail"
+        android:hint="@string/e_mail_hint_txt"
         android:layout_marginBottom="10dp"/>
 
     <EditText
@@ -32,15 +28,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPassword"
-        android:hint="Password"
-        android:layout_marginBottom="20dp"/>
+        android:hint="@string/password_hint_txt"
+        android:layout_marginBottom="20dp" />
 
     <Button
         android:id="@+id/btn_masuk"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Sign In"
-        android:layout_marginBottom="20dp"
+        android:text="@string/sign_in_hint_txt"
+        android:layout_marginBottom="5dp"
         style="?android:attr/borderlessButtonStyle"/>
 
     <Button
@@ -48,7 +44,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Sign Up"
-        android:layout_marginBottom="20dp"
         style="?android:attr/borderlessButtonStyle"/>
 
 </LinearLayout>

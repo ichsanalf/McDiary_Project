@@ -43,6 +43,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
+            android:layout_marginBottom="20dp"
             android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -56,10 +57,10 @@
                 android:layout_height="wrap_content"
                 android:clickable="true"
                 android:onClick="saveButtonClick"
-                app:backgroundTint="@android:color/holo_blue_dark"
-                app:elevation="0dp"
+                app:backgroundTint="@color/saveButtonColor"
+                app:elevation="2dp"
                 app:fabSize="normal"
-                app:srcCompat="@android:drawable/ic_menu_save"
+                android:src="@drawable/ic_save"
                 tools:layout_editor_absoluteX="244dp"
                 tools:layout_editor_absoluteY="495dp" />
 
@@ -67,26 +68,28 @@
                 android:id="@+id/floatingDeleteButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="12dp"
+                android:layout_marginLeft="18dp"
                 android:layout_weight="1"
                 android:clickable="true"
+                app:elevation="2dp"
                 android:onClick="deleteButtonClick"
-                app:backgroundTint="@android:color/holo_blue_dark"
+                app:backgroundTint="@color/deleteButtonColor"
                 app:fabSize="normal"
-                app:srcCompat="@android:drawable/ic_menu_delete" />
+                android:src="@drawable/ic_delete" />
 
             <android.support.design.widget.FloatingActionButton
                 android:id="@+id/floatingCancelButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="12dp"
+                android:layout_marginLeft="18dp"
                 android:clickable="true"
+                app:elevation="2dp"
                 android:onClick="cancelButtonClick"
-                app:backgroundTint="@android:color/holo_blue_dark"
+                app:backgroundTint="@color/newButtonColor"
                 app:fabSize="normal"
                 app:layout_constraintBottom_toBottomOf="@+id/floatingSaveButton"
                 app:layout_constraintStart_toEndOf="@+id/floatingSaveButton"
-                app:srcCompat="@android:drawable/ic_delete" />
+                android:src="@drawable/ic_cancel" />
         </LinearLayout>
 
     </android.support.constraint.ConstraintLayout>

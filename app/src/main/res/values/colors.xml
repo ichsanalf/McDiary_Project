@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorPrimary">#FFFFFF</color>
+    <color name="colorPrimaryDark">#FFE600</color>
+    <color name="colorAccent">#FFE711</color>
 
     <color name="newButtonColor">#196DFF</color>
-    <color name="removeButtonColor">#FF1919</color>
+    <color name="deleteButtonColor">#FF1919</color>
     <color name="saveButtonColor">#19ff20</color>
 </resources>
