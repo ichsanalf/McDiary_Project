@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "950697675430",
+    "firebase_url": "https://mcdiary-c8d57.firebaseio.com",
+    "project_id": "mcdiary-c8d57",
+    "storage_bucket": "mcdiary-c8d57.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:950697675430:android:2073f90c255d9f46",
+        "android_client_info": {
+          "package_name": "com.tubes.mcdiary"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "950697675430-mlecfh3i65f3bscanvilcqu5n93809a7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tubes.mcdiary",
+            "certificate_hash": "23d898fed16b08b78050e8d2fde360cfaf22e6ff"
+          }
+        },
+        {
+          "client_id": "950697675430-2mcpdatches96k56q8u94verthgc9ngu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDpCeI36Qm_LgKUXkaiYYoxGsrbu5MYI-U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "950697675430-2mcpdatches96k56q8u94verthgc9ngu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
