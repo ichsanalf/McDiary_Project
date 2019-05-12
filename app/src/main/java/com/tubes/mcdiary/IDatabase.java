@@ -2,6 +2,10 @@ package com.tubes.mcdiary;
 
 import java.util.ArrayList;
 
+/* Interface untuk DB dengan operasi :
+   - add, remove, edit data.
+   - Throws Exception jika input tidak valid.
+ */
 public interface IDatabase
 {
 

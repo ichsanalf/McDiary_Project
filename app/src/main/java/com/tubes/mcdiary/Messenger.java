@@ -3,7 +3,7 @@ package com.tubes.mcdiary;
 import android.app.Activity;
 import android.content.DialogInterface;
 
-
+// Class ini menampilkan message kepada user
 public class Messenger
 {
     public static void showError(String title, String msg, Activity activity)

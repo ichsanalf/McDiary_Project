@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity implements RecycleItemOnClic
     private FloatingActionButton floatingNewButton;
     private FloatingActionButton floatingRemoveButton;
     private FloatingActionButton floatingSettingsButton;
-    private boolean isInDeleteMode;//For future use
+//    private boolean isInDeleteMode;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity implements RecycleItemOnClic
         floatingSettingsButton.hide();
         floatingRemoveButton = (FloatingActionButton)findViewById(R.id.floatingDeleteInListButton);
         floatingRemoveButton.hide();
-        isInDeleteMode = false;//For future use
+//        isInDeleteMode = false;
 
         try
         {
@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity implements RecycleItemOnClic
         lad.setClickListener(this);
     }
 
-
+    // mengarahkan ke NewDataActivity class ketika button New diclik
     public void newButtonClick(View v)
     {
         Intent intent = new Intent(MainActivity.this, NewDataActivity.class);
@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity implements RecycleItemOnClic
         this.startActivityForResult(intent, 1);
     }
 
-
+    // activity result saat add, edit, remove data
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data)
     {
@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity implements RecycleItemOnClic
             {
                 String mode = data.getStringExtra("MODE");
 
-                if(mode.equals("new"))
+                if(mode.equals("new"))//jika user ingin menambahkan data
                 {
                     try
                     {
@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity implements RecycleItemOnClic
                         Messenger.showError("", e.getMessage(), this);
                     }
                 }
-                else if(mode.equals("edit"))
+                else if(mode.equals("edit"))// jika user ingin mengedit data
                 {
                     String text = data.getStringExtra("text");
                     String id = data.getStringExtra("id");
@@ -96,7 +96,7 @@ public class MainActivity extends AppCompatActivity implements RecycleItemOnClic
                         Messenger.showError("", e.getMessage(), this);
                     }
                 }
-                else if(mode.equals("delete"))
+                else if(mode.equals("delete"))// jika user ingin meremove atau delete data
                 {
                     String text = data.getStringExtra("text");
                     String id = data.getStringExtra("id");
@@ -114,22 +114,23 @@ public class MainActivity extends AppCompatActivity implements RecycleItemOnClic
         }
     }
 
-
+    // Return app context
     public static Context getAppContext()
     {
         return MainActivity.context;
     }
 
-
+    // On item click pada setiap data yang di click,
+    // maka akan menampilkan NewDataActivity mode Edit
     @Override
     public void onItemClick(View v, int position)
     {
-        UserData data = lad.getData(position);
+        UserData data = lad.getData(position); // mengampbil posisi data pada RV
 
         Intent intent = new Intent(MainActivity.this, NewDataActivity.class);
-        intent.putExtra("text", data.getText());
-        intent.putExtra("id", data.getId());
-        intent.putExtra("MODE", "edit");
+        intent.putExtra("text", data.getText()); // mengambil text data
+        intent.putExtra("id", data.getId()); // mengambil id Data
+        intent.putExtra("MODE", "edit"); // mengubah mode jadi EDIT
         this.startActivityForResult(intent, 1);
     }
 }

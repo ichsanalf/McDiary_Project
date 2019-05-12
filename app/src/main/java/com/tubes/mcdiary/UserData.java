@@ -26,24 +26,20 @@ public class UserData
         this.id = genId();
     }
 
-
     public String getText()
     {
         return text;
     }
-
 
     public String getId()
     {
         return id;
     }
 
-
     public String getText(int end)
     {
         return getText(0, end);
     }
-
 
     public String getText(int start, int end)
     {
@@ -53,27 +49,26 @@ public class UserData
         return text.substring(start, end);
     }
 
-
     public void setText(String text)
     {
         this.text = text;
     }
 
-
+    // Return date dari data dengan format : 'HH:mm:ss dd/MM/yyyy'
     public String getDate()
     {
         int pos = id.indexOf('#');
         return id.substring(0, pos);
     }
 
-
+    //judul maksimal 25 letters
     @Override
     public String toString()
     {
         return getText(MAX_TITLE_LENGHT);
     }
 
-
+    // untuk mengenerate unique data ID berdasarkan current time
     private String genId()
     {
         Random rand = new Random();

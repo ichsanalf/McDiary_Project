@@ -51,7 +51,7 @@ public class NewDataActivity extends AppCompatActivity implements DialogClickLis
 
     }
 
-
+    // Cancel activity sebelumya dan return parent activity
     private void cancelActivity()
     {
         Intent intent = new Intent();
@@ -59,7 +59,8 @@ public class NewDataActivity extends AppCompatActivity implements DialogClickLis
         finish();
     }
 
-
+    // Fungsi jika salah satu switch mode untuk save, edit, atau do nothing pada data.
+    // Lalu fungsi ini akan melakukan cancel activity sebelumnya dan return ke parent activity
     private void reactToUser()
     {
         switch(mode)
@@ -109,7 +110,7 @@ public class NewDataActivity extends AppCompatActivity implements DialogClickLis
         }
     }
 
-
+    // view jika button save di click saat mode EDIT
     public void saveButtonClick(View v)
     {
         if(!mode.equals("new"))
@@ -124,7 +125,7 @@ public class NewDataActivity extends AppCompatActivity implements DialogClickLis
         }
     }
 
-
+    //menampilkan dialog ke user jika ingin delete data
     public void deleteButtonClick(View v)
     {
         CheckDialog dialog = new CheckDialog("Delete?", getString(R.string.msg_check_delete), this, this);
@@ -132,7 +133,7 @@ public class NewDataActivity extends AppCompatActivity implements DialogClickLis
         dialog.show();
     }
 
-
+    // cancel activity sebelumnya, tidak menyimpan data yang diubah oleh user
     public void cancelButtonClick(View v)
     {
         CheckDialog dialog = new CheckDialog("Cancel?", getString(R.string.msg_check_cancel), this, this);
@@ -146,7 +147,7 @@ public class NewDataActivity extends AppCompatActivity implements DialogClickLis
     {
     }
 
-
+    // fungsi ketika OK di click pada DELETE dialog
     @Override
     public void onDialogOkClick()
     {
