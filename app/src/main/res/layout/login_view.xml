@@ -33,20 +33,23 @@
         android:layout_height="wrap_content"
         android:inputType="textPassword"
         android:hint="Password"
-        android:layout_marginBottom="20dp"/>
+        android:layout_marginBottom="20dp"
+        android:background="@layout/rounded_border_edittext"/>
 
     <Button
         android:id="@+id/btn_masuk"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Sign In"
-        android:layout_marginBottom="20dp"/>
+        android:layout_marginBottom="20dp"
+        style="?android:attr/borderlessButtonStyle"/>
 
     <Button
         android:id="@+id/btn_daftar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Sign Up"
-        android:layout_marginBottom="20dp"/>
+        android:layout_marginBottom="20dp"
+        style="?android:attr/borderlessButtonStyle"/>
 
 </LinearLayout>

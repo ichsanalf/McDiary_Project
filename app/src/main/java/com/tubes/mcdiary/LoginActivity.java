@@ -1,8 +1,11 @@
 package com.tubes.mcdiary;
 
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Log;
@@ -38,6 +41,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         //variabel tadi untuk memanggil fungsi
         mDatabase = FirebaseDatabase.getInstance().getReference();
         mAuth = FirebaseAuth.getInstance();
+
+        //font
+//        Typeface typeface = ResourcesCompat.getFont(context, R.font.myfont);
 
         // diatur sesuai id komponennya
         edtEmail = (EditText)findViewById(R.id.tv_email);

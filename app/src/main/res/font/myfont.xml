@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<font-family xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!--<font app:fontStyle="medium" app:fontWeight="400" app:font="@font/Poppins-Medium"/>-->
+    <!--<font app:fontStyle="regular" app:fontWeight="400" app:font="@font/Poppins-Regular" />-->
+    <!--<font app:fontStyle="mediumItalic" app:fontWeight="400" app:font="@font/Poppins-MediumItalic" />-->
+</font-family>

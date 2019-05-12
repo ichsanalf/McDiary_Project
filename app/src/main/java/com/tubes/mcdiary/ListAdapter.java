@@ -23,7 +23,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder>
     {
         public TextView title;
         public EditText date;
-        private RecycleItemOnClickListener OnClickListener;//On click listener for each View
+        private RecycleItemOnClickListener OnClickListener;//On click listener untuk setiap View
 
         public ViewHolder(View v)
         {
@@ -36,7 +36,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder>
             v.setOnClickListener(this);
         }
 
-
+        // On Click listener untuk setiap view pada RecyclerView
         @Override
         public void onClick(View view)
         {
@@ -48,7 +48,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder>
         }
     }
 
-
+    // Membuat ListAdapter baru, set RecyclerView dan Layout Managernya
     public ListAdapter(Context context, RecyclerView.LayoutManager RecManager, RecyclerView list) throws Exception
     {
         this.list = list;
@@ -60,13 +60,14 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder>
         mDataset = db.getContent();
     }
 
-
+    // Mengedit data berdasarkan (String) data.getId()
     public void editData(UserData data) throws Exception
     {
         this.removeData(data);
         this.addData(data);
     }
 
+    // Membuat ViewHolder yang baru
     @Override
     public ListAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType)
     {
@@ -76,44 +77,37 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder>
         return vh;
     }
 
+    // Set holder pada bind
+    // position = posisi holdernya
     @Override
     public void onBindViewHolder(ViewHolder holder, int position)
     {
         holder.title.setText(mDataset.get(position).toString().replace("\n", " "));
         holder.date.setText(mDataset.get(position).getDate());
-
-        //Sets different color for odd and even rows
-        if(position % 2 == 0)
-        {
-            holder.itemView.setBackgroundColor(Color.parseColor("#ffffff"));
-        }
-        else
-        {
-            holder.itemView.setBackgroundColor(Color.parseColor("#eaeaea"));
-        }
     }
 
+    // Return size dari data
     @Override
     public int getItemCount()
     {
         return mDataset.size();
     }
 
-
+    // Membuat data baru
     public void addData(UserData data) throws Exception
     {
-        db.addData(data);//Adds new data into file
-        mDataset.add(data);//Adds data into database
-        this.notifyItemInserted(mDataset.size() - 1);//Notify RecyclerView about changes
+        db.addData(data);//menambahkan data baru ke file
+        mDataset.add(data);//menambahkandata ke database
+        this.notifyItemInserted(mDataset.size() - 1);//notify RecyclerView terhadap changes
     }
 
-
+    // set click listener untuk RecyclerItem
     public void setClickListener(RecycleItemOnClickListener clickListener)
     {
         this.clickListener = clickListener;
     }
 
-
+    // menghapus data dari RecyclerView dan file(database)
     public void removeData(UserData data) throws Exception
     {
         int pos = getPos(data);
@@ -126,13 +120,14 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder>
         this.notifyItemRangeChanged(pos, mDataset.size());
     }
 
-
+    // Return posisi data terakhir
+    // pos = posisi data
     public UserData getData(int pos)
     {
         return mDataset.get(pos);
     }
 
-
+    // Return posisi data akhir dalam mDataset
     private int getPos(UserData data)
     {
         for(int i = 0; i < mDataset.size(); i++)

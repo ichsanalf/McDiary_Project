@@ -18,7 +18,7 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
-
+//store user data ke XML file
 public class Database implements IDatabase
 {
     private String fpath;
@@ -31,7 +31,7 @@ public class Database implements IDatabase
         init();
     }
 
-
+    // fungsi membuat XML file dengan root element jika data tidak ada/valid
     private void init()
     {
         try
@@ -56,7 +56,12 @@ public class Database implements IDatabase
         }
     }
 
-
+    // fungsi untuk menyimpan dokumen ke XML file
+    /*  throws :
+        throws digunakan pada waktu mendeklarasikan suatu method untuk memberitahu
+        bahwa method yang bersangkutan dapat melempar eksepsi dengan tipe yang
+        dideklarasikan oleh keyword throws tersebut.
+     */
     private void saveXMLToFile(Document doc) throws Exception
     {
         TransformerFactory transformerFactory = TransformerFactory.newInstance();
@@ -66,7 +71,7 @@ public class Database implements IDatabase
         transformer.transform(source, result);
     }
 
-
+    //return rooot document dari XML user data file
     private Document getXMLDoc() throws Exception
     {
         File fXmlFile = new File(fpath);
@@ -76,7 +81,7 @@ public class Database implements IDatabase
         return dBuilder.parse(fXmlFile);
     }
 
-
+    // menyimpan data ke dalam file
     @Override
     public void addData(UserData data) throws Exception
     {
@@ -104,7 +109,7 @@ public class Database implements IDatabase
         }
     }
 
-
+    // menghapus data dari file berdasarkan ID data yaitu data.getID()
     @Override
     public void removeData(UserData data) throws Exception
     {
@@ -132,7 +137,7 @@ public class Database implements IDatabase
         }
     }
 
-
+    // mengedit data (berdasarkan id) text dalam file dengan text yang baru
     @Override
     public void editData(UserData data) throws Exception
     {
@@ -140,7 +145,7 @@ public class Database implements IDatabase
         addData(data);
     }
 
-
+    // men-load ArrayList dengan data dari file dan return arrayList tsb (it).
     @Override
     public ArrayList<UserData> getContent() throws Exception
     {
