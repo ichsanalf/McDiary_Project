@@ -18,7 +18,7 @@ public class CheckDialog extends DialogFragment
         setDialog(title, msg, activity);
     }
 
-    //set dialog dengan :
+    // set dialog dengan :
     // title = judul dialog,
     // msg = pesan untuk user,
     // activity = activity yang akan di display di dialog

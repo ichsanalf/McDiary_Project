@@ -4,7 +4,7 @@
     <color name="colorPrimaryDark">#FFE600</color>
     <color name="colorAccent">#FFE711</color>
 
-    <color name="newButtonColor">#196DFF</color>
-    <color name="deleteButtonColor">#FF1919</color>
-    <color name="saveButtonColor">#19ff20</color>
+    <color name="newButtonColor">#134397</color>
+    <color name="deleteButtonColor">#CF0000</color>
+    <color name="saveButtonColor">#00CC05</color>
 </resources>

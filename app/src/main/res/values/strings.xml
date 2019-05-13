@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">mcDiary</string>
+    <string name="app_name">mcdiary</string>
     <string name="msg_approve">Approve</string>
     <string name="msg_ok">Ok</string>
     <string name="msg_cancel">Cancel</string>

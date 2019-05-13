@@ -27,7 +27,7 @@ public class Database implements IDatabase
     public Database(Context cont)
     {
         this.cont = cont;
-        fpath = cont.getFilesDir().getPath() + "/torar.xml";
+        fpath = cont.getFilesDir().getPath() + "/mcdiary.xml";
         init();
     }
 

@@ -20,9 +20,6 @@ public class MainActivity extends AppCompatActivity implements RecycleItemOnClic
     private static Context context;
     private ListAdapter lad;
     private FloatingActionButton floatingNewButton;
-//    private FloatingActionButton floatingRemoveButton;
-//    private FloatingActionButton floatingSettingsButton;
-//    private boolean isInDeleteMode;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,11 +31,6 @@ public class MainActivity extends AppCompatActivity implements RecycleItemOnClic
         setSupportActionBar(toolbar);
 
         floatingNewButton = (FloatingActionButton) findViewById(R.id.floatingNewButton);
-//        floatingSettingsButton = (FloatingActionButton)findViewById(R.id.floatingSettingsButton);
-//        floatingSettingsButton.hide();
-//        floatingRemoveButton = (FloatingActionButton)findViewById(R.id.floatingDeleteInListButton);
-//        floatingRemoveButton.hide();
-//        isInDeleteMode = false;
 
         try {
             lad = new ListAdapter
